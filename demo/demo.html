@@ -1,0 +1,38 @@
+
+<!-- Licensed under a BSD license. See license.html for license -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>DOVE - demo</title>
+    <style>
+    #demo-container {
+      position: absolute;
+      left: 50vw;
+      top: 0;
+      width: 50vw;
+      height: 50vw;
+    }
+    #demo-video {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 50vw;
+      height: 50vw;
+    }
+    </style>
+  </head>
+  <body>
+    <!-- <canvas id="canvas"></canvas> -->
+    <video loop muted inline playsinline id="demo-video">
+      <source type="video/mp4">
+    </video>
+    <div id="demo-container" style="z-index:-1;"></div>
+    <p id="message" style="z-index:1;"></p>
+    <div class="demo-data" data-name="bird2" data-glb="data/0010/mesh_frame.glb" data-video="data/0010/input_image.mp4"></div>
+    <div class="demo-data" data-name="bird1" data-glb="data/0163/mesh_frame.glb" data-video="data/0163/input_image.mp4"></div>
+  </body>
+  <script src="js/demo.js" type="module"></script>
+</html>
+
