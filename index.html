@@ -86,6 +86,17 @@
     <br><br>
     <hr>
 
+    <h1>Interactive Demo</h1>
+    <p style="width: 80%; text-align: center;">
+        <a href="demo/demo.html">Full screen version.</a>
+    </p>
+    <div class="video-container" style="cursor: all-scroll">
+        <iframe src="demo/demo.html" style="border:0;"></iframe>
+    </div>
+
+    <br><br>
+    <hr>
+
     <h1>Abstract</h1>
     <p style="width: 80%;">
         Learning deformable 3D objects from 2D images is an extremely ill-posed problem. Existing methods rely on explicit supervision to establish multi-view correspondences, such as template shape models and keypoint annotations, which restricts their applicability on objects "in the wild". In this paper, we propose to use monocular videos, which naturally provide correspondences across time, allowing us to learn 3D shapes of deformable object categories without explicit keypoints or template shapes. Specifically, we present DOVE, which learns to predict 3D canonical shape, deformation, viewpoint and texture from a single 2D image of a bird, given a bird video collection as well as automatically obtained silhouettes and optical flows as training data. Our method reconstructs temporally consistent 3D shape and deformation, which allows us to animate and re-render the bird from arbitrary viewpoints from a single image.
@@ -108,25 +119,57 @@
     <img style="width: 80%;" src="./resources/method.jpg"
          alt="Method overview figure"/>
     <br>
-    <a class="links" href="https://github.com/elliottwu/webpage-template">[Code]</a>
+    <p style="width: 80%;">
+      Given a single frame in each training sequence, we predict the 3D pose, shape and texture of the object. Using a differentiable renderer to reconstruct the input image, the entire model can be trained end-to-end with reconstruction losses, without any explicit 3D supervision.
+    </p>
 
-    <br><br>
+    <br>
     <hr>
 
     <h1>Results</h1>
-    <img style="width: 80%;" src="./resources/results.jpg"
-         alt="Results figure"/>
+    <h3 style="text-align: center;">Single-Image Reconstruction</h3>
+    <video autoplay loop muted inline width="1200" style="max-width: 80%">
+      <source src="./resources/reconstruction.mp4" type="video/mp4" alt="Reconstruction results">
+    </video>
 
     <br><br>
-    <hr>
 
-    <h1>Demo</h1>
-    <p style="width: 80%;">
-        <a href="demo/demo.html">Full screen version.</a>
-    </p>
-    <div class="video-container">
-        <iframe src="demo/demo.html" style="border:0;"></iframe>
-    </div>
+    <h3 style="text-align: center;">Texture Swapping</h3>
+    <video autoplay loop muted inline width="1200" style="max-width: 80%">
+      <source src="./resources/swap_tex.mp4" type="video/mp4" alt="Texture swapping results">
+    </video>
+
+    <br><br>
+
+    <h3 style="text-align: center;">Animation</h3>
+    <video autoplay loop muted inline width="1200" style="max-width: 80%">
+      <source src="./resources/animation.mp4" type="video/mp4" alt="Animation results">
+    </video>
+
+    <br><br>
+
+    <h3 style="text-align: center;">Comparisons</h3>
+    <video autoplay loop muted inline width="1200" style="max-width: 80%">
+      <source src="./resources/compare1.mp4" type="video/mp4" alt="Comparison results">
+    </video>
+
+    <br><br>
+
+    <video autoplay loop muted inline width="1200" style="max-width: 80%">
+      <source src="./resources/compare2.mp4" type="video/mp4" alt="Comparison results">
+    </video>
+
+    <br><br>
+
+    <video autoplay loop muted inline width="1200" style="max-width: 80%">
+      <source src="./resources/compare3.mp4" type="video/mp4" alt="Comparison results">
+    </video>
+
+    <br><br>
+
+    <video autoplay loop muted inline width="1200" style="max-width: 80%">
+      <source src="./resources/compare4.mp4" type="video/mp4" alt="Comparison results">
+    </video>
 
     <br><br>
     <hr>
@@ -155,10 +198,10 @@
 
     <h1>Acknowledgements</h1>
     <p style="width: 80%;">
-        Shangzhe Wu is supported by Facebook Research. Tomas Jakab is supported by Clarendon Scholarship. Christian Rupprecht is supported by Innovate UK (project 71653) on behalf of UK Research and Innovation (UKRI) and by the European Research Council (ERC) IDIU-638009.
+        We thank Xueting Li for sharing the code for VMR with us. Shangzhe Wu is supported by Facebook Research. Tomas Jakab is supported by Clarendon Scholarship. Christian Rupprecht is supported by Innovate UK (project 71653) on behalf of UK Research and Innovation (UKRI) and by the European Research Council (ERC) IDIU-638009. Andrea Vedaldi is supported by European Research Council (ERC) IDIU-638009.
         This <a href="https://github.com/elliottwu/webpage-template">webpage template</a> was originally made by <a href="http://web.mit.edu/phillipi/">Phillip Isola</a>
         and <a href="http://richzhang.github.io/">Richard Zhang</a> for a
-        <a href="http://richzhang.github.io/colorization/">colorful</a> ECCV project.
+        <a href="http://richzhang.github.io/colorization/">colorful</a> project.
     </p>
 
     <br><br>
