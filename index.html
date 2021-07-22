@@ -1,7 +1,8 @@
 <script src="https://www.google.com/jsapi" type="text/javascript"></script>
 <script type="text/javascript">google.load("jquery", "1.3.2");</script>
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap"
-      rel="stylesheet">
+rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="./resources/style.css" media="screen"/>
 
 <html lang="en">
@@ -20,6 +21,7 @@
     <meta property="twitter:image"         content="https://dove3d.github.io/resources/og_image.jpg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    
     <!-- Add your Google Analytics tag here -->
     <script async
             src="https://www.googletagmanager.com/gtag/js?id=G-LDZDB316TT"></script>
@@ -150,27 +152,49 @@
     <br><br>
 
     <h3 style="text-align: center;">Comparisons</h3>
-    <video autoplay loop muted inline width="1200" style="max-width: 80%">
-      <source src="./resources/compare1.mp4" type="video/mp4" alt="Comparison results">
-    </video>
 
-    <br><br>
+    <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="3" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <video autoplay loop muted inline width="1200" style="max-width: 80%">
+            <source src="./resources/compare1.mp4" type="video/mp4" alt="Comparison results">
+            </video>
+          </div>
 
-    <video autoplay loop muted inline width="1200" style="max-width: 80%">
-      <source src="./resources/compare2.mp4" type="video/mp4" alt="Comparison results">
-    </video>
+          <div class="carousel-item">
+            <video autoplay loop muted inline width="1200" style="max-width: 80%">
+            <source src="./resources/compare2.mp4" type="video/mp4" alt="Comparison results">
+            </video>
+          </div>
 
-    <br><br>
+          <div class="carousel-item">
+            <video autoplay loop muted inline width="1200" style="max-width: 80%">
+            <source src="./resources/compare3.mp4" type="video/mp4" alt="Comparison results">
+            </video>
+          </div>
 
-    <video autoplay loop muted inline width="1200" style="max-width: 80%">
-      <source src="./resources/compare3.mp4" type="video/mp4" alt="Comparison results">
-    </video>
-
-    <br><br>
-
-    <video autoplay loop muted inline width="1200" style="max-width: 80%">
-      <source src="./resources/compare4.mp4" type="video/mp4" alt="Comparison results">
-    </video>
+          <div class="carousel-item">
+            <video autoplay loop muted inline width="1200" style="max-width: 80%">
+            <source src="./resources/compare4.mp4" type="video/mp4" alt="Comparison results">
+            </video>
+          </div>
+        
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
 
     <br><br>
     <hr>
@@ -207,6 +231,8 @@
 
     <br><br>
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
 
 </body>
 
