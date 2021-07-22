@@ -58,6 +58,7 @@ function main() {
         map: null
     };
     var speed = 0.8;
+    var textureEnabled = true;
 
     function onWindowResize() {
         camera.aspect = container.clientWidth / container.clientHeight;
@@ -147,6 +148,10 @@ function main() {
                 object.mixer = mixer;
                 object.textureAnimator = new TextureAnimator(mesh.material.map, numFrames, duration);
 
+                if (!textureEnabled) {
+                    disableTexture();
+                }
+
                 document.getElementById("message").innerHTML = "";
             },
             // called while loading is progressing
@@ -186,12 +191,11 @@ function main() {
         light.position.set( 0, 0, 1 );
         lights.push(light);
         scene.add(light);
-        light = new THREE.DirectionalLight(0xffffff, 0.35);
+        light = new THREE.DirectionalLight(0xffffff, 0.2);
         light.position.set( 0, 0, -1 );
         lights.push(light);
         scene.add(light);
     }
-
 
     function loadExample(elem) {
         document.getElementById("message").innerHTML = "Loading...";
@@ -230,8 +234,10 @@ function main() {
     gui.add( params, 'texture' ).onChange( function ( val ) {
         if (val) {
             enableTexture();
+            textureEnabled = true;
         } else {
             disableTexture();
+            textureEnabled = false;
         }
         render();
     } );
