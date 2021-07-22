@@ -185,7 +185,7 @@ function main() {
         light.position.set( 0, 0, 1 );
         lights.push(light);
         scene.add(light);
-        light = new THREE.DirectionalLight(0xffffff, 0.7);
+        light = new THREE.DirectionalLight(0xffffff, 0.35);
         light.position.set( 0, 0, -1 );
         lights.push(light);
         scene.add(light);
