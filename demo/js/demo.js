@@ -1,3 +1,4 @@
+// Author: Tomas Jakab
 import * as THREE from 'https://unpkg.com/three@latest?module';
 
 import { GUI } from 'https://unpkg.com/three@latest/examples/jsm/libs/dat.gui.module.js?module';
