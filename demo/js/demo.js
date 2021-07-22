@@ -223,8 +223,6 @@ function main() {
 
     var gui = new GUI();
     gui.add( params, 'examples', Array.from(examples.keys())).onChange( function (val) {
-        if (document.getElementById("message").innerHTML.length > 0)
-        return; 
         loadExample(examples.get(val));
     });
     
