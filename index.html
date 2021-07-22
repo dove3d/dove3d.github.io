@@ -84,7 +84,7 @@ rel="stylesheet">
     </video>
     <br><br>
     <p style="width: 80%;">
-        <b><i>DOVE</i></b> - Deformable Objects from VidEos. Given a collection of video clips of an object category as training data, we learn a model that is able to predict a textured, articulated 3D mesh ofthe object from a single input image.
+        <b><i>DOVE</i></b> - Deformable Objects from VidEos. Given a collection of video clips of an object category as training data, we learn a model that predicts a textured, articulated 3D mesh from a single image of the object.
     </p>
 
     <br><br>
@@ -100,20 +100,20 @@ rel="stylesheet">
 
     <hr>
 
-    <h1>Abstract</h1>
-    <p style="width: 80%;">
-        Learning deformable 3D objects from 2D images is an extremely ill-posed problem. Existing methods rely on explicit supervision to establish multi-view correspondences, such as template shape models and keypoint annotations, which restricts their applicability on objects "in the wild". In this paper, we propose to use monocular videos, which naturally provide correspondences across time, allowing us to learn 3D shapes of deformable object categories without explicit keypoints or template shapes. Specifically, we present DOVE, which learns to predict 3D canonical shape, deformation, viewpoint and texture from a single 2D image of a bird, given a bird video collection as well as automatically obtained silhouettes and optical flows as training data. Our method reconstructs temporally consistent 3D shape and deformation, which allows us to animate and re-render the bird from arbitrary viewpoints from a single image.
-    </p>
-
-    <br><br>
-    <hr>
-
     <h1>Video</h1>
     <div class="video-container">
         <iframe src="https://www.youtube-nocookie.com/embed/_FsADb0XmpY" frameBorder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen></iframe>
     </div>
+
+    <br><br>
+    <hr>
+
+    <h1>Abstract</h1>
+    <p style="width: 80%;">
+        Learning deformable 3D objects from 2D images is an extremely ill-posed problem. Existing methods rely on explicit supervision to establish multi-view correspondences, such as template shape models and keypoint annotations, which restricts their applicability on objects "in the wild". In this paper, we propose to use monocular videos, which naturally provide correspondences across time, allowing us to learn 3D shapes of deformable object categories without explicit keypoints or template shapes. Specifically, we present DOVE, which learns to predict 3D canonical shape, deformation, viewpoint and texture from a single 2D image of a bird, given a bird video collection as well as automatically obtained silhouettes and optical flows as training data. Our method reconstructs temporally consistent 3D shape and deformation, which allows us to animate and re-render the bird from arbitrary viewpoints from a single image.
+    </p>
 
     <br><br>
     <hr>
