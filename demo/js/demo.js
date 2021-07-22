@@ -203,11 +203,11 @@ function main() {
     }
         
     // run 
-    let examples = [];
+    let examples = new Map();
     document.querySelectorAll('.demo-data').forEach((elem) => {
-        examples.push(elem);
+        examples.set(elem.dataset.name, elem);
     });
-    loadExample(examples[0]);
+    loadExample(examples.values().next().value);
 
 
     var params = {
@@ -217,27 +217,18 @@ function main() {
         },
         speed: speed,
         texture: true,
-        bird1: function () {
-            if (document.getElementById("message").innerHTML.length > 0)
-                return; 
-            loadExample(examples[0]);
-        },
-        bird2: function () {
-            if (document.getElementById("message").innerHTML.length > 0)
-                return; 
-            loadExample(examples[1]);
-        },
+        examples: examples.keys().next().value
     };
 
     var gui = new GUI();
-    var folder = gui.addFolder('examples');
-    folder.open();
-    folder.add( params, 'bird1' );
-    folder.add( params, 'bird2' );
-
-    var folder = gui.addFolder('settings');
-    folder.open();
-    folder.add( params, 'texture' ).onChange( function ( val ) {
+    gui.add( params, 'examples', Array.from(examples.keys())).onChange( function (val) {
+        if (document.getElementById("message").innerHTML.length > 0)
+        return; 
+        loadExample(examples.get(val));
+    });
+    
+    gui.open();
+    gui.add( params, 'texture' ).onChange( function ( val ) {
         if (val) {
             enableTexture();
         } else {
@@ -245,14 +236,14 @@ function main() {
         }
         render();
     } );
-    folder.add( params, 'speed', 0, 1 ).onChange( function ( val ) {
+    gui.add( params, 'speed', 0.16, 1 ).onChange( function ( val ) {
+        speed = val;
         object.video.playbackRate = val;
         render();
     } );
-    folder.add( params, 'resetCamera' );
-
-    gui.open();
-
+    gui.add( params, 'resetCamera' ).name('reset camera');
+    gui.close()
+    
     onWindowResize();
     animate();
     
