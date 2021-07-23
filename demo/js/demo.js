@@ -59,6 +59,7 @@ function main() {
     };
     var speed = 0.8;
     var textureEnabled = true;
+    var playing = true;
 
     function onWindowResize() {
         camera.aspect = container.clientWidth / container.clientHeight;
@@ -140,13 +141,14 @@ function main() {
                 var video = document.getElementById("demo-video");
                 video.setAttribute('src', video_url)
                 video.playbackRate = speed;
-                video.play();
                 
                 object.mesh = mesh;
                 object.video = video;
                 object.action = action;
                 object.mixer = mixer;
                 object.textureAnimator = new TextureAnimator(mesh.material.map, numFrames, duration);
+
+                pausePlay();
 
                 if (!textureEnabled) {
                     disableTexture();
@@ -168,6 +170,16 @@ function main() {
     function resetCamera() {
         camera.position.set(... cameraPosition);
         camera.lookAt(... cameraLookAt);
+    }
+
+    function pausePlay() {
+        if (object.video != null) {
+            if (playing) {
+                object.video.play();
+            } else {
+                object.video.pause();
+            }
+        }
     }
 
     function enableTexture() {
@@ -220,6 +232,10 @@ function main() {
         resetCamera: function () {
             resetCamera();
         },
+        pausePlay: function () {
+            playing = !playing;
+            pausePlay();
+        },
         speed: speed,
         texture: true,
         examples: examples.keys().next().value
@@ -246,6 +262,7 @@ function main() {
         object.video.playbackRate = val;
         render();
     } );
+    gui.add( params, 'pausePlay' ).name('pause/play');
     gui.add( params, 'resetCamera' ).name('reset camera');
     gui.close()
     
