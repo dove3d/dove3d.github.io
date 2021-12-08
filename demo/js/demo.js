@@ -1,10 +1,10 @@
 // Author: Tomas Jakab
-import * as THREE from 'https://unpkg.com/three@latest?module';
+import * as THREE from 'https://unpkg.com/three@0.134.0?module';
 
-import { GUI } from 'https://unpkg.com/three@latest/examples/jsm/libs/dat.gui.module.js?module';
+import { GUI } from 'https://unpkg.com/three@0.134.0/examples/jsm/libs/dat.gui.module.js?module';
 
-import { OrbitControls } from 'https://unpkg.com/three@latest/examples/jsm/controls/OrbitControls.js?module';
-import { GLTFLoader } from 'https://unpkg.com/three@latest/examples/jsm/loaders/GLTFLoader.js?module';
+import { OrbitControls } from 'https://unpkg.com/three@0.134.0/examples/jsm/controls/OrbitControls.js?module';
+import { GLTFLoader } from 'https://unpkg.com/three@0.134.0/examples/jsm/loaders/GLTFLoader.js?module';
 
 
 function main() {
